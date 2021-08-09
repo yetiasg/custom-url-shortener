@@ -1,0 +1,23 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "http-errors": "^1.7.2",
+    "mongoose": "^5.13.5",
+    "nodemon": "^2.0.12"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0"
+  },
+  "description": ""
+}
