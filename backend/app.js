@@ -17,8 +17,8 @@ app.use((req, res, next) => {
   next();
 })
 
-const router = require('./router');
-app.use(router);
+const shortenerRouter = require('./router');
+app.use(shortenerRouter);
 
 app.get('/', (req, res) => {
   res.status(200).json({message: "URL shortener service"});
