@@ -4,9 +4,11 @@ const config = require('./config.js')
 
 exports.shorten = async(req, res, next) => {
   try{
-    const {longUrl} = req.body;
+    const originalUrl = req.body.originalUrl;
+    // console.log(originalUrl)
+    console.log(req.body)
     const url = new URLModel({
-      originalURL: longUrl
+      originalURL: originalUrl
     });
     const result = await url.save();
     res.status(200).json({ newUrl: `${config.server.BASE_URL}/#${result._id}`});

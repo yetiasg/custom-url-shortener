@@ -1,0 +1,41 @@
+body{
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: antiquewhite;
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section{
+  position: absolute;
+  top:20rem;
+}
+
+input{
+  border: none;
+  width: 45rem;
+  height: 2.5rem;
+  border-radius: 10px;
+  padding: 0 0 0 0.5rem;
+  outline: none;
+}
+
+button{
+  border: none;
+  border-radius: 10px;
+  height: 2.5rem;
+  width: 5rem;
+  background-color: rgb(226, 203, 175);
+}
+
+button:hover{
+  background-color: rgb(223, 195, 162);
+}
+
+#newUrl{
+  color: blue;
+  cursor: pointer;
+}

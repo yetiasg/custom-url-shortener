@@ -1,7 +1,7 @@
 module.exports = {
   server: {
     PORT: 3000,
-    BASE_URL: 'http://localhost'
+    BASE_URL: 'http://127.0.0.1:5500'
   },
   database: {
     MONGO_URL: 'mongodb://localhost:27017',
