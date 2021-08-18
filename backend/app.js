@@ -7,10 +7,9 @@ const config = require('./config');
 const app = express();
 
 app.use(express.json());
-// app.use(express.urlencoded({extended: true}));
 app.use(morgan('dev'));
-// app.use(helmet());
-// app.use(cors());
+app.use(helmet());
+app.use(cors());
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -24,7 +23,6 @@ app.use(shortenerRouter);
 
 app.use((req, res, next) => {
   res.status(404).json({message: 'This route does not exist'});
-  next(createError.NotFound('This route does not exist'));
 });
 
 app.use((err, req, res, next) => {

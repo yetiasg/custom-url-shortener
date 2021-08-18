@@ -1,18 +1,7 @@
 'use strict'
 
-// const PAGE_URL = 'http://127.0.0.1:5500/'
-const PAGE_URL = 'http://127.0.0.1:5500/'
 
-
-const redirect = () =>{
-  if(window.location.href.includes(PAGE_URL)){
-    const urlValue = window.location.href.replace(PAGE_URL, '');
-    console.log(urlValue)
-  }
-};
-
-redirect()
-
+const PAGE_URL = 'localhost:8080/'
 const SERVER_URL = 'http://localhost:3000';
 
 const getJSON = async (url, options) => {
@@ -24,6 +13,25 @@ const getJSON = async (url, options) => {
     console.log(error);
   }
 }
+
+const redirect = async () =>{
+  if(window.location.href.includes(`${PAGE_URL}#`)){
+    try{
+      const {originalURL} = await getJSON(`${SERVER_URL}/originalUrl`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({newUrl: window.location.href})
+      });
+      console.log(originalURL)
+      window.location.href = originalURL;
+    }catch (error){
+      console.log(error);
+    }
+  }
+};
+redirect()
 
 const shortenURL = async(e) => {
   e.preventDefault();

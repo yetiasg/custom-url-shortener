@@ -1,0 +1,17 @@
+version: '3.9'
+services: 
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+    container_name: mongodb_db
+  server:
+    build: .
+    ports:
+      - "3000:3000"
+    container_name: node_server
+  nginx-server:
+    build: ./../../frontend
+    ports:
+      - "8080:80"
+    container_name: webserver

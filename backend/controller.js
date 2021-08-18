@@ -5,7 +5,6 @@ const config = require('./config.js')
 exports.shorten = async(req, res, next) => {
   try{
     const originalUrl = req.body.originalUrl;
-    // console.log(originalUrl)
     console.log(req.body)
     const url = new URLModel({
       originalURL: originalUrl
